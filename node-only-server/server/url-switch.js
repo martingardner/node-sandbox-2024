@@ -11,7 +11,8 @@ function urlSwitch(query) {
     console.log('url-switch query', query);
     const contentTypes = {
         html : 'text/html',
-        js : 'text/js'
+        js : 'text/js',
+        css: 'text/css',
     }
     let fileInfo = {path: '', contentType: ''}
     switch(query){
@@ -24,6 +25,10 @@ function urlSwitch(query) {
         case '/assets/test.js':
             fileInfo.path = './htmlPages/assets/test.js';
             fileInfo.contentType = contentTypes.js;
+            break;
+        case '/assets/test.css':
+            fileInfo.path = './htmlPages/assets/test.css';
+            fileInfo.contentType = contentTypes.css;
             break;
         default:
             fileInfo.path = './htmlPages/404.html';
