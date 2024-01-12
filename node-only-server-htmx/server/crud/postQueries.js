@@ -1,3 +1,5 @@
+const { textEntered } = require('../../public/templates/textEntered');
+
 function postQueries(query, postData){
     console.log('postQueries postData', postData);
     console.log('postQueries query', query);
@@ -15,6 +17,8 @@ function postQueries(query, postData){
 
     switch(query){
         case '/textEntered':
+            textEntered(postData);
+            console.log('postTextEntered');
             fileInfo.path = `${filePathes.snippets}/textEntered.html`;
             fileInfo.contentType = contentTypes.html;
             break;

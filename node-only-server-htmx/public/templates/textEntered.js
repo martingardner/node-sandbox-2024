@@ -1,10 +1,19 @@
-function textEntered(data){
+const fs = require('fs');
+
+async function textEntered(data){
+    //const controller = new AbortController();
     console.log('textEntered data', data);
-    return(
-        <span>
-            value here
-        </span>
-    )
+
+    const textData = `<span>${data.textdata}</span>`;
+    console.log('textData', textData);
+    //const writeF = fs.promises.writeFile('textEntered.html', textData);
+    fs.writeFileSync('./textEntered.html', textData);
+    //const writeF = fs.promises.writeFileSync('textEntered.html', textData);
+
+    //controller.abort();
+
+    //await writeF;
+   
 }
 
 exports.textEntered = (data) => {
