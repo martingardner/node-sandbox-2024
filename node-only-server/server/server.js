@@ -1,7 +1,7 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-var urlSwitch = require('./url-switch')
+var urlSwitch = require('./url-switch');
 
 const serverSetup = () => http.createServer( (req, res) => {
     const urlParse = url.parse(req.url);
