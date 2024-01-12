@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- prevent favicon extra call -->
+        <link rel="icon" href="data:,">
+    </head>
+    <body>
+        <h1>Welcome to Node Base Page</h1>
+        <section>
+             <h2>The text entered is</h2>
+             <div id="textEntered"></div>
+        </section>
+        <section>
+            <form>
+                <fieldset>
+                    <label>Number</label>
+                    <input type="text" name="textdata" placeholder="enter text" />
+                    <button 
+                        type="submit"
+                        hx-trigger="click"
+                        hx-post="/textEntered"
+                        hx-target="#textEntered"
+                        hx-swap="innerHTML"
+                        hx-include="[name='textdata']"
+                    >
+                        Submit
+                    </button>
+                </fieldset>
+            </form>
+        </section>
+        <script type="text/javascript" src="./public/assets/js/htmx@1.9.9.min.js"></script>
+    </body>
+</html>
