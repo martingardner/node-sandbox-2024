@@ -7,7 +7,7 @@ async function textEntered(data){
     const textData = `<span>${data.textdata}</span>`;
     console.log('textData', textData);
     //const writeF = fs.promises.writeFile('textEntered.html', textData);
-    fs.writeFileSync('./textEntered.html', textData);
+    fs.writeFile('./public/templates/textEntered.html', textData, ()=>{console.log('WRITEFILE')});
     //const writeF = fs.promises.writeFileSync('textEntered.html', textData);
 
     //controller.abort();

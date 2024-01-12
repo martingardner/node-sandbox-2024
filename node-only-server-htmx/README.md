@@ -4,7 +4,3 @@ reference for help
 
 - https://nodejs.org/api/fs.html#fspromiseswritefilefile-data-options
 
-
-
-Leaving Off On::
-- trying to get fs.writeFile to work correctly.  TextEntered.html is not getting updated, so file is not showing anything.
