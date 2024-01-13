@@ -2,7 +2,6 @@
 const http = require('http');
 const fs = require('fs');
 //imported files
-//const { urlSwitch } = require('./url-switch');
 const { getQueries } = require('./crud/getQueries');
 const { postQueries } = require('./crud/postQueries');
 const { collectPostData } = require('./helpers/collectPostData');
@@ -27,8 +26,6 @@ const serverSetup = () => http.createServer( (req, res) => {
         case 'post':
             collectPostData(req, result => {
                 console.log('result', result);
-                //postData = result;
-                //return postQueries(query, result)
                 fileData = postQueries(query, result);
                 console.log('POST path fileData', fileData)
                 fs.readFile(fileData.path, (err, data) => {
@@ -38,14 +35,9 @@ const serverSetup = () => http.createServer( (req, res) => {
                     res.end();
                 })
             })
-            
-            //returnData = postQueries(query, postData)
             break;
         default:
-
             break;
-
-
     }
 }).listen(8080);
 

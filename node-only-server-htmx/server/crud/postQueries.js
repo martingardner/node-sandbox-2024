@@ -1,18 +1,19 @@
 const { textEntered } = require('../../public/templates/textEntered');
+const {contentTypes , filePathes} = require('../helpers/queryHelper');
 
+/**
+ * @function
+ * @name postQueries
+ * @param {String} query 
+ * @param {Object} postData 
+ * @returns Object {path: contentType: }
+ * @description
+ * returns the file path and content type of the query sent in.
+ */
 function postQueries(query, postData){
     console.log('postQueries postData', postData);
     console.log('postQueries query', query);
-    const contentTypes = {
-        html :  'text/html',
-        js   :  'text/js',
-        css  :  'text/css',
-    }
-    const filePathes = {
-        pages    :  './public/pages',
-        js       :  './public/assets/js',
-        snippets :  './public/templates'
-    }
+
     let fileInfo = {path: '', contentType: ''}
 
     switch(query){

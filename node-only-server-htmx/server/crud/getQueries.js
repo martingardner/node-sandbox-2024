@@ -1,3 +1,4 @@
+const {contentTypes , filePathes} = require('../helpers/queryHelper');
 /**
  * @function
  * @name getQueries
@@ -7,17 +8,6 @@
  * returns the file path and content type of the query sent in.
  */
 function getQueries(query){
-    //console.log('getQueries query', query);
-    const contentTypes = {
-        html :  'text/html',
-        js   :  'text/javascript',
-        css  :  'text/css',
-    }
-    const filePathes = {
-        pages    :  './public/pages',
-        js       :  './public/assets/js',
-        snippets :  './public/templates'
-    }
     let fileInfo = {path: '', contentType: ''}
 
     switch(query){
@@ -36,7 +26,7 @@ function getQueries(query){
             fileInfo.contentType = contentTypes.html;
             break;
     }
-    //console.log('url-switch fileInfo', fileInfo);
+
     return fileInfo;
 }
 
