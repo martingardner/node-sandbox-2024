@@ -7,3 +7,6 @@ reference for help
 ## TO DO
 - refactor some spots, have some repeating code and cleanup to do
 - add more htmx for practice
+
+### Startup
+- ```npm run start```
