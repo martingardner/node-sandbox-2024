@@ -33,14 +33,6 @@ const serverSetup = () => http.createServer( (req, res) => {
     switch(req.method.toLowerCase().trim()){
         case 'get':
             fileData = getQueries(query);
-            /*
-            fs.readFile(fileData.path, (err, data) => {
-                console.log('data', data);
-                res.writeHead(200, {'Content-Type': fileData.contentType});
-                res.write(data);
-                res.end();
-            })
-            */
             readFile(fileData, res);
             break;
         case 'post':
@@ -48,14 +40,6 @@ const serverSetup = () => http.createServer( (req, res) => {
                 console.log('result', result);
                 fileData = postQueries(query, result);
                 console.log('POST path fileData', fileData)
-                /*
-                fs.readFile(fileData.path, (err, data) => {
-                    console.log('data', data);
-                    res.writeHead(200, {'Content-Type': fileData.contentType});
-                    res.write(data);
-                    res.end();
-                })
-                */
                 readFile(fileData, res);
             });
             break;

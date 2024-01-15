@@ -1,5 +1,13 @@
 const {parse} = require('querystring');
 
+/**
+ * @function
+ * @name collectPostData
+ * @param {Object} request 
+ * @param {Function} callback 
+ * @description
+ * takes in request and callback, in order to be able to return back POST data.
+ */
 function collectPostData(request, callback) {
     const FORM_URLENCODED = 'application/x-www-form-urlencoded';
 
