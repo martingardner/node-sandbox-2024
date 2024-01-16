@@ -9,7 +9,7 @@ const {contentTypes , filePathes} = require('../helpers/queryHelper');
  */
 function getQueries(query){
     let fileInfo = {path: '', contentType: ''}
-
+    console.log('query', query);
     switch(query){
         case '/':
         case '/index':
@@ -20,6 +20,11 @@ function getQueries(query){
         case '/public/assets/js/htmx@1.9.9.min.js':
             fileInfo.path = `${filePathes.js}/htmx@1.9.9.min.js`;
             fileInfo.contentType = contentTypes.js;
+            break;
+        case '/public/json/testjson.json':
+            console.log('JSON');
+            fileInfo.path = `${filePathes.json}/testjson.json`;
+            fileInfo.contentType = contentTypes.json;
             break;
         default:
             fileInfo.path = `${filePathes.pages}/404.html`;

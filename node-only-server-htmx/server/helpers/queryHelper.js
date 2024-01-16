@@ -7,7 +7,8 @@ const contentTypes = {
 const filePathes = {
     pages    :  './public/pages',
     js       :  './public/assets/js',
-    snippets :  './public/templates'
+    snippets :  './public/templates',
+    json     :  './public/json',
 }
 
 exports.contentTypes = contentTypes;
