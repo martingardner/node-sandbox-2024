@@ -4,9 +4,6 @@ reference for help
 
 - https://nodejs.org/api/fs.html#fspromiseswritefilefile-data-options
 
-## TO DO
-- refactor some spots, have some repeating code and cleanup to do
-- add more htmx for practice
 
 ### Startup
 - ```npm run start```

@@ -16,7 +16,6 @@ const { collectPostData } = require('./helpers/collectPostData');
  */
 function readFile(fileData, res) {
     fs.readFile(fileData.path, (err, data) => {
-        console.log('data', data);
         res.writeHead(200, {'Content-Type': fileData.contentType});
         res.write(data);
         res.end();
@@ -25,11 +24,9 @@ function readFile(fileData, res) {
 
 
 const serverSetup = () => http.createServer( (req, res) => {
-    console.log('req method', req.method);
-    
     const query = req.url;
-    console.log('query', query);
     let fileData = '';
+
     switch(req.method.toLowerCase().trim()){
         case 'get':
             fileData = getQueries(query);
@@ -37,9 +34,7 @@ const serverSetup = () => http.createServer( (req, res) => {
             break;
         case 'post':
             collectPostData(req, result => {
-                console.log('result', result);
                 fileData = postQueries(query, result);
-                console.log('POST path fileData', fileData)
                 readFile(fileData, res);
             });
             break;

@@ -11,9 +11,6 @@ const {contentTypes , filePathes} = require('../helpers/queryHelper');
  * returns the file path and content type of the query sent in.
  */
 function postQueries(query, postData){
-    console.log('postQueries postData', postData);
-    console.log('postQueries query', query);
-
     let fileInfo = {path: '', contentType: ''}
 
     switch(query){
@@ -27,7 +24,6 @@ function postQueries(query, postData){
 
             break;
     }
-    console.log('postQueries', fileInfo);
     return fileInfo
 }
 
