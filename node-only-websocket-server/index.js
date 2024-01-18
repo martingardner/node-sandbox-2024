@@ -31,8 +31,13 @@ server.listen(1337, '127.0.0.1', () => {
   req.end();
 
   req.on('upgrade', (res, socket, upgradeHead) => {
-    console.log(`got upgraded! ${Math.random()}`);
-    socket.end();
+    for(let i = 0; i <= 3; i++){
+        console.log(`got upgraded! ${Math.random()}`);
+        socket.end();
+        
+    }
+    
     process.exit(0);
+    
   });
 });
